@@ -1,0 +1,79 @@
+image: <%= image %>
+
+variables:
+  QY_WEBHOOK: "<%= webhook %>"
+  <% if (isEnableSonar) { %>SONAR_TOKEN: "<%= sonarToken %>" <% } %>
+
+stages:
+  - build
+  - deploy
+  <% if (isEnableSonar) { %>- sonarqube-check <% } %>
+
+.after_send:
+  after_script:
+    - wxwork-notify.sh
+
+# 构建
+build:
+  stage: build
+  tags:
+    - runner
+  only:
+    refs: [dev, sit]
+  # key是唯一值，重名会覆盖上一次的缓存
+  cache:
+    key: "$CI_PROJECT_NAME"
+    paths:
+      - .npm/
+  before_script:
+    - echo `date +%s` > START_TIME_S
+    - wxwork-notify.sh -s
+
+  script:
+    - build.sh
+  after_script:
+    - build-notify.sh
+  artifacts:
+    name: "$CI_COMMIT_REF_NAME-dist"
+    expire_in: 60 mins
+    paths:
+      - dist/
+      - START_TIME_S
+
+# 测试开发环境部署
+deploy:devOrSit:
+  stage: deploy
+  tags:
+    - runner
+  only:
+    refs: [dev, sit]
+  extends: .after_send
+  script:
+    - cp -r dist/web/* dist
+  <% deploy.forEach(function(item){%>
+    - deploy.sh <%= item %>
+  <% })%>
+  
+<% if (isEnableSonar) { %>
+# 代码扫描
+sonarqube-check:
+  stage: sonarqube-check
+  tags:
+    - runner
+  only:
+    refs: [dev, dev_cicd]
+  image:
+    name: harbor.leyaoyao.com/lyy-gz/sonar-scanner-cli:latest
+    entrypoint: [""]
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"
+    GIT_DEPTH: "0"
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+    - sonar-scanner
+  extends: .after_send
+  allow_failure: true
+<% } %>

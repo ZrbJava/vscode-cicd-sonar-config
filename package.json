@@ -1,0 +1,147 @@
+{
+	"name": "cicd-sonar-config",
+	"displayName": "cicd-sonar-config",
+	"description": "这是一个企业级自定义配置gitlab-ci.yml插件",
+	"keywords": [
+		"gitlab-ci",
+		"gitlab-ci.yml",
+		"sonarquebe",
+		"cicd"
+	],
+	"version": "0.0.1",
+	"icon": "assets/logo-light.png",
+	"engines": {
+		"vscode": "^1.74.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://gitlab.leyaoyao.com/middleground/vscode-cicd.git"
+	},
+	"publisher": "zhaorubo",
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:cicd-sonar-config.helloWorld",
+		"onCommand:cicd-sonar-config.openGitlabCiHelp",
+		"onCommand:cicd-sonar-config.openSonarquebeHelp"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "cicd-sonar-config.generator",
+				"title": "生成gitlab-ci",
+				"icon": "/assets/setting.png"
+			},
+			{
+				"command": "cicd-sonar-config.openGitlabCiHelp",
+				"title": "gitlab-ci帮助文档",
+				"icon": "/assets/help.png"
+			},
+			{
+				"command": "cicd-sonar-config.openSonarquebeHelp",
+				"title": "sonarquebe帮助文档",
+				"icon": "/assets/help.png"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "cicd-sonar-config.generator",
+				"key": "ctrl+g",
+				"mac": "cmd+g"
+			},
+			{
+				"command": "cicd-sonar-config.generator",
+				"key": "ctrl+h",
+				"mac": "cmd+h"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "cicd-sonar-config.generator",
+					"group": "navigation"
+				},
+				{
+					"when": "editorFocus",
+					"command": "cicd-sonar-config.openGitlabCiHelp",
+					"group": "navigation"
+				}
+			],
+			"view/title": [
+				{
+					"command": "cicd-sonar-config.generator",
+					"group": "navigation",
+					"when": "view == gitlab-ci"
+				}
+			]
+		},
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "devops-app",
+					"title": "devops",
+					"icon": "/assets/logo-light.png"
+				}
+			]
+		},
+		"views": {
+			"devops-app": [
+				{
+					"id": "gitlab-ci",
+					"name": "gitlab-ci配置"
+				},
+				{
+					"id": "help",
+					"name": "帮助文档"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "cicd-sonar-config",
+			"properties": {
+				"cicd-sonar-config.showTip": {
+					"type": "boolean",
+					"default": true,
+					"description": "启动时显示自定义欢迎页"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.0.0",
+		"@types/mocha": "^10.0.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.74.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"@vscode/test-electron": "^2.2.0",
+		"ejs": "^3.1.8",
+		"eslint": "^8.28.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.1.0",
+		"ts-loader": "^9.4.1",
+		"typescript": "^4.9.3",
+		"webpack": "^5.75.0",
+		"webpack-cli": "^5.0.0"
+	},
+	"dependencies": {
+		"-": "^0.0.1",
+		"@types/ejs": "^3.1.1",
+		"D": "^1.0.0"
+	}
+}
