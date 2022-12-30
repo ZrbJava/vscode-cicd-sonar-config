@@ -1,5 +1,5 @@
 <div align="center">
-<img src="./assets/logo-dark.png" alt="韭菜盒子" width="128"/>
+<img src="./assets/logo-dark.png" alt="logo" width="128"/>
 
 # gitlab-ci-generator（cicd配置器）
 
