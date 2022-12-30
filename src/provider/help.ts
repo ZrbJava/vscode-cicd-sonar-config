@@ -8,17 +8,21 @@ export class HelpProvider implements vsc.TreeDataProvider<HelpTreeItem> {
 	}
 	getChildren(element?: HelpTreeItem): vsc.ProviderResult<HelpTreeItem[]> {
 		return [
-			new HelpTreeItem('gitlab-ci帮助文档', vsc.TreeItemCollapsibleState.None, {
-				title: '打开gitlab-ci帮助文档',
-				command: 'cicd-sonar-config.openGitlabCiHelp',
-			}),
+			new HelpTreeItem(
+				'gitlab-ci帮助文档',
+				{
+					title: '打开gitlab-ci帮助文档',
+					command: 'cicd-sonar-config.openGitlabCiHelp',
+				},
+				path.resolve(__dirname, '../assets/gitlab.png')
+			),
 			new HelpTreeItem(
 				'sonarquebe帮助文档',
-				vsc.TreeItemCollapsibleState.None,
 				{
 					title: 'sonarquebe帮助文档',
 					command: 'cicd-sonar-config.openSonarquebeHelp',
-				}
+				},
+				path.resolve(__dirname, '../assets/sonarqube.png')
 			),
 		]
 	}
@@ -27,51 +31,19 @@ export class HelpProvider implements vsc.TreeDataProvider<HelpTreeItem> {
 export class HelpTreeItem extends vsc.TreeItem {
 	constructor(
 		public readonly label: string,
-		public readonly collapsibleState: vsc.TreeItemCollapsibleState,
-		public readonly command?: vsc.Command
+		public readonly command?: vsc.Command,
+		public readonly iconPath?: vsc.TreeItem['iconPath']
 	) {
-		super(label, collapsibleState)
+		super(label)
 		this.tooltip = '点击查看详情'
-		// this.description = '>>>查看'
-		this.iconPath = {
-			light: path.resolve(__dirname, '../assets/help.png'),
-			dark: path.resolve(__dirname, '../assets/help.png'),
-		}
+		this.collapsibleState = vsc.TreeItemCollapsibleState.None
 		this.contextValue = 'contextValue+++'
 	}
 }
-
-// export class Dependency extends vsc.TreeItem {
-// 	constructor(
-// 		public readonly label: string,
-// 		private readonly version: string,
-// 		public readonly collapsibleState: vsc.TreeItemCollapsibleState,
-// 		public readonly command?: vsc.Command
-// 	) {
-// 		super(label, collapsibleState)
-
-// 		this.tooltip = `${this.label}-${this.version}`
-// 		this.description = this.version
-// 	}
-
-// 	iconPath = {
-// 		light: path.join(
-// 			__filename,
-// 			'..',
-// 			'..',
-// 			'resources',
-// 			'light',
-// 			'dependency.svg'
-// 		),
-// 		dark: path.join(
-// 			__filename,
-// 			'..',
-// 			'..',
-// 			'resources',
-// 			'dark',
-// 			'dependency.svg'
-// 		),
-// 	}
-
-// 	contextValue = 'dependency'
-// }
+/**
+ * 注册
+ */
+export function registerHelpProvider() {
+	const helpProvider = new HelpProvider()
+	vsc.window.registerTreeDataProvider('help', helpProvider)
+}

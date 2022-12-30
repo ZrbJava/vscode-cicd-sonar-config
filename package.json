@@ -1,14 +1,14 @@
 {
 	"name": "cicd-sonar-config",
 	"displayName": "cicd-sonar-config",
-	"description": "这是一个企业级自定义配置gitlab-ci.yml插件",
+	"description": "这是一个企业级自定义配置cicd插件",
 	"keywords": [
 		"gitlab-ci",
 		"gitlab-ci.yml",
 		"sonarquebe",
 		"cicd"
 	],
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"icon": "assets/logo.png",
 	"engines": {
 		"vscode": "^1.74.0"
@@ -24,7 +24,9 @@
 	"activationEvents": [
 		"onCommand:cicd-sonar-config.helloWorld",
 		"onCommand:cicd-sonar-config.openGitlabCiHelp",
-		"onCommand:cicd-sonar-config.openSonarquebeHelp"
+		"onCommand:cicd-sonar-config.openSonarquebeHelp",
+		"onCommand:cicd-sonar-config.startGitlabRunner",
+		"onCommand:cicd-sonar-config.newSonarProject"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -43,6 +45,16 @@
 				"command": "cicd-sonar-config.openSonarquebeHelp",
 				"title": "sonarquebe帮助文档",
 				"icon": "/assets/help.png"
+			},
+			{
+				"command": "cicd-sonar-config.startGitlabRunner",
+				"title": "启用gitlab-runner",
+				"icon": "/assets/start-dark.png"
+			},
+			{
+				"command": "cicd-sonar-config.newSonarProject",
+				"title": "新建sonarquebe项目",
+				"icon": "/assets/new-dark.png"
 			}
 		],
 		"keybindings": [
@@ -74,7 +86,7 @@
 				{
 					"command": "cicd-sonar-config.generator",
 					"group": "navigation",
-					"when": "view == gitlab-ci"
+					"when": "view == cicd"
 				}
 			]
 		},
@@ -90,8 +102,8 @@
 		"views": {
 			"devops-app": [
 				{
-					"id": "gitlab-ci",
-					"name": "gitlab-ci配置"
+					"id": "cicd",
+					"name": "cicd配置"
 				},
 				{
 					"id": "help",

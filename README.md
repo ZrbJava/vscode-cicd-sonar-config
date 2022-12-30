@@ -7,11 +7,7 @@
 **cicd配置器**——在VSCode里 根据用户自定义输入生成gitlab-ci.yml 以及sonarquebe代码检测相关配置。
 
 
-[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/zhaorubo.cicd-sonar-config.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.gitlab-ci-generator)
-
-[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/zhaorubo.cicd-sonar-config?color=success&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
-
-[![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/zhaorubo.cicd-sonar-config)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/zhaorubo.cicd-sonar-config?logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.gitlab-ci-generator) [![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/zhaorubo.cicd-sonar-config?color=success&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config) [![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/zhaorubo.cicd-sonar-config)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
 
 干就完了！
 
@@ -42,7 +38,11 @@
 
 ## 插件介绍
 
-- 插件介绍
+- 插件菜单
+![插件截图](https://lyy-public.oss-cn-shenzhen.aliyuncs.com/20221230181520375.png)
+
+- 插件右键菜单
+![插件截图](https://lyy-public.oss-cn-shenzhen.aliyuncs.com/20221230181833192.png)
 
 ## 插件设置
 

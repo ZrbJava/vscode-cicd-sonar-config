@@ -1,17 +1,23 @@
 import * as vscode from 'vscode'
 
-import { HelpProvider } from './provider/help'
+import { registerHelpProvider } from './provider/help'
+import { registerCicdProvider } from './provider/cicd'
 import { openGitlabCiHelp } from './command/openGitlabCiHelp'
 import { openSonarquebeHelp } from './command/openSonarquebeHelp'
 import { generator } from './command/generator'
+import { startGitlabRunner } from './command/startGitlabRunner'
+import { newSonarProject } from './command/newSonarProject'
 export function activate(context: vscode.ExtensionContext) {
 	console.log('context', context)
-	const helpProvider = new HelpProvider()
-	vscode.window.registerTreeDataProvider('help', helpProvider)
-	vscode.window.setStatusBarMessage('hello!赵汝波')
+	// const helpProvider = new HelpProvider()
+	// vscode.window.registerTreeDataProvider('help', helpProvider)
+	registerHelpProvider()
+	registerCicdProvider()
 	openGitlabCiHelp(context)
 	openSonarquebeHelp(context)
 	generator(context)
+	startGitlabRunner(context)
+	newSonarProject(context)
 }
 
 // This method is called when your extension is deactivated
