@@ -16,5 +16,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.0.2] - 2022-12-30
 
 ### DOC
-- 修改文档
+- 📝修改文档
 
+## [0.0.3] - 2022-12-30
+
+### DOC
+- 📝更换logo

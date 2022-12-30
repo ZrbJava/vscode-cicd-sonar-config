@@ -1,5 +1,6 @@
 <div align="center">
-<img src="https://lyy-public.oss-cn-shenzhen.aliyuncs.com/20221230115953450.png" alt="logo" width="128"/>
+<!-- <img src="https://lyy-public.oss-cn-shenzhen.aliyuncs.com/20221230115953450.png" alt="logo" width="128"/> -->
+<img src="https://lyy-public.oss-cn-shenzhen.aliyuncs.com/20221230131804073.png" alt="logo" width="128"/>
 
 # cicd-sonar-config（cicd-sonar配置器）
 
@@ -7,8 +8,10 @@
 
 
 [![Marketplace](https://img.shields.io/visual-studio-marketplace/v/zhaorubo.cicd-sonar-config.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.gitlab-ci-generator)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/zhaorubo.cicd-sonar-config.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
-[![Rating](https://img.shields.io/visual-studio-marketplace/stars/zhaorubo.cicd-sonar-config.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
+
+[![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/zhaorubo.cicd-sonar-config?color=success&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
+
+[![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/zhaorubo.cicd-sonar-config)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
 
 干就完了！
 
