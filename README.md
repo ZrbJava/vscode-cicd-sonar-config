@@ -1,14 +1,14 @@
 <div align="center">
-<img src="./assets/logo-dark.png" alt="logo" width="128"/>
+<img src="https://lyy-public.oss-cn-shenzhen.aliyuncs.com/20221230115953450.png" alt="logo" width="128"/>
 
-# gitlab-ci-generator（cicd配置器）
+# cicd-sonar-config（cicd-sonar配置器）
 
 **cicd配置器**——在VSCode里 根据用户自定义输入生成gitlab-ci.yml 以及sonarquebe代码检测相关配置。
 
 
-[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/giscafer.leek-fund.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.gitlab-ci-generator)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/giscafer.leek-fund.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=giscafer.leek-fund)
-[![Rating](https://img.shields.io/visual-studio-marketplace/stars/giscafer.leek-fund.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=giscafer.leek-fund)
+[![Marketplace](https://img.shields.io/visual-studio-marketplace/v/zhaorubo.cicd-sonar-config.svg?label=Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.gitlab-ci-generator)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/zhaorubo.cicd-sonar-config.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
+[![Rating](https://img.shields.io/visual-studio-marketplace/stars/zhaorubo.cicd-sonar-config.svg?style=for-the-badge)](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)
 
 干就完了！
 
@@ -16,7 +16,7 @@
 
 ## Table of contents
 
-- [gitlab-ci-generator（cicd配置器）](#gitlab-ci-generatorcicd配置器)
+- [cicd-sonar-config（cicd-sonar配置器）](#cicd-sonar-configcicd-sonar配置器)
   - [Table of contents](#table-of-contents)
   - [功能特性](#功能特性)
   - [安装使用](#安装使用)
@@ -35,7 +35,7 @@
 
 ## 安装使用
 
-安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=giscafer.leek-fund)，VSCode 最低版本要求：`^1.44.0`
+安装插件：[VisualStudio - Marketplace](https://marketplace.visualstudio.com/items?itemName=zhaorubo.cicd-sonar-config)，VSCode 最低版本要求：`^1.74.0`
 
 ## 插件介绍
 
