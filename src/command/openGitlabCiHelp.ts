@@ -20,7 +20,7 @@ export const openGitlabCiHelp = (context: vsc.ExtensionContext) => {
 				}
 			)
 			const html = fs.readFileSync(
-				path.resolve(context.extensionPath, './src/html/gitlab-ci-help.html'),
+				path.resolve(context.extensionPath, './html/gitlab-ci-help.html'),
 				'utf-8'
 			)
 			console.log('html', html)

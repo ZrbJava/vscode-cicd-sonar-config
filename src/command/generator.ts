@@ -142,7 +142,7 @@ interface IConfig {
  */
 async function generatorConfig(context: vsc.ExtensionContext, config: IConfig) {
 	const gitlabCiTemplate = fs.readFileSync(
-		path.resolve(context.extensionPath, 'src/template/gitlab-ci.ejs'),
+		path.resolve(context.extensionPath, './template/gitlab-ci.ejs'),
 		'utf-8'
 	)
 	const gitlabCiConfigContent = ejs.render(gitlabCiTemplate, config)
@@ -159,7 +159,7 @@ async function generatorConfig(context: vsc.ExtensionContext, config: IConfig) {
 			const sonarTemplate = fs.readFileSync(
 				path.resolve(
 					context.extensionPath,
-					'src/template/sonar-project.properties.ejs'
+					'./template/sonar-project.properties.ejs'
 				),
 				'utf-8'
 			)

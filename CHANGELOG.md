@@ -31,3 +31,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - ✨更改菜单栏名称
 - ✨cicd配置，新增`启用gitlab-runner功能`（TODO:由于权限问题,该功能待完善）
 - ✨cicd配置, 新增`sonarquebe项目功能`（TODO:由于权限问题,该功能待完善）
+
+## [0.0.5] - 2023-01-03
+
+### Bug修复
+- 🐞 修复发布后的模板文件路径问题
